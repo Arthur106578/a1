@@ -25,11 +25,21 @@
       <form action="#" method="get">
         <p>
           <label for="name">姓名（可填昵称）</label>
-          <input type="text" id="name" name="name" placeholder="怎么称呼你" required>
+          <input type="text" id="name" name="name" placeholder="怎么称呼你" pattern="\S{1,10}" title="1到10个字符，且不能包含空格" required>
         </p>
         <p>
           <label for="mail">邮箱</label>
           <input type="email" id="mail" name="mail" required>
+        </p>
+        <p>
+          <label for="type">反馈类型</label>
+          <select id="type" name="type" required>
+            <option value="">请选择</option>
+            <option value="content">课程内容</option>
+            <option value="pace">讲解节奏</option>
+            <option value="practice">实践环节</option>
+            <option value="other">其他</option>
+          </select>
         </p>
         <p>课程评分</p>
         <p>
