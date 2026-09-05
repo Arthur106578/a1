@@ -21,7 +21,59 @@
     </section>
     <section id="form">
       <h2>登记表单</h2>
-      <p>（表单下一步填在这里）</p>
+      <form action="#" method="get">
+        <p>登记类型</p>
+        <p>
+          <label><input type="radio" name="kind" value="lost" checked> 我丢了物品</label>
+          <label><input type="radio" name="kind" value="found"> 我捡到物品</label>
+        </p>
+        <p>
+          <label for="item">物品分类</label>
+          <select id="item" name="item" required>
+            <option value="">请选择</option>
+            <option value="card">证件卡类</option>
+            <option value="electronics">电子设备</option>
+            <option value="keys">钥匙</option>
+            <option value="books">书籍资料</option>
+            <option value="clothes">衣物</option>
+            <option value="other">其他</option>
+          </select>
+        </p>
+        <p>
+          <label for="date">丢失/拾获日期</label>
+          <input type="date" id="date" name="date" max="2026-09-05" required>
+        </p>
+        <p>
+          <label for="place">地点</label>
+          <input type="text" id="place" name="place" placeholder="如：图书馆三楼自习区" maxlength="30" required>
+        </p>
+        <p>
+          <label for="name">联系人姓名</label>
+          <input type="text" id="name" name="name" placeholder="怎么称呼你" pattern="\S{1,10}" title="1到10个字符，且不能包含空格" required>
+        </p>
+        <p>
+          <label for="phone">联系电话</label>
+          <input type="text" id="phone" name="phone" inputmode="numeric" placeholder="11位手机号" pattern="\d{11}" title="请输入11位数字手机号" required>
+        </p>
+        <p>
+          <label for="mail">邮箱（选填）</label>
+          <input type="email" id="mail" name="mail" placeholder="example@domain.com">
+        </p>
+        <p>
+          <label for="photo">物品照片</label>
+          <input type="file" id="photo" name="photo" accept="image/*">
+        </p>
+        <p>
+          <label for="desc">物品特征描述</label><br>
+          <textarea id="desc" name="desc" rows="4" maxlength="200" placeholder="颜色、品牌、外观特征等"></textarea>
+        </p>
+        <p>
+          <label><input type="checkbox" name="agree" required> 我保证所填信息真实有效</label>
+        </p>
+        <p>
+          <button type="submit">提交登记</button>
+        </p>
+      </form>
     </section>
   </main>
   <footer>
